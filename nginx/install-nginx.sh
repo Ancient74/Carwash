@@ -19,6 +19,7 @@ sudo cp nginx.conf /etc/nginx/sites-available/$domain
 sudo ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/
 
 sudo mkdir /etc/systemd/system/nginx.service.d
+sudo rm /etc/systemd/system/nginx.service.d/override.conf
 echo "[Service]
 Restart=always" >> /etc/systemd/system/nginx.service.d/override.conf
 
