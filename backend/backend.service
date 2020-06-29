@@ -1,0 +1,15 @@
+[Unit]
+Description=Backend service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=yuri
+ExecStart=dotnet backend.dll --urls=http://localhost:5000
+WorkingDirectory=/opt/backend/
+
+[Install]
+WantedBy=multi-user.target
